@@ -1,0 +1,10 @@
+<div class="container d-flex flex-column gap-3">
+  <% @beers.each do |beer| %>
+    <div class="card">
+      <h3 class="m-3"><%= beer.name %></h3>
+      <h5 class="mx-3 text-secondary"><%= beer.style %></h5>
+      <p class="mx-5"><%= beer.description %></p>
+      <%= image_tag(beer.photo) %>
+    </div>
+  <% end %>
+</div>

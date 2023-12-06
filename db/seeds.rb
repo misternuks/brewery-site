@@ -15,6 +15,12 @@ prices = [600, 700, 800, 900, 1000]
 true_false = [(1 + 2 == 3), (1 + 2 == 4)]
 image_link_sources = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"]
 
+puts "Destroying old beers..."
+
+Beer.destroy_all
+
+puts "...Old beers destroyed."
+
 puts "Making beers..."
 
 count = 0
@@ -33,7 +39,8 @@ count = 0
 
   beer.photo.attach(
     io: File.open(File.join(Rails.root, "app/assets/images/#{image_link_sources.sample}")),
-    filename: "#{count}.jpg"
+    filename: "#{count}.jpg",
+    content_type: "image/jpg"
   )
 end
 
