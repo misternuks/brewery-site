@@ -2,7 +2,7 @@ class CreateBeers < ActiveRecord::Migration[7.1]
   def change
     create_table :beers do |t|
       t.string :name
-      t.string :type
+      t.string :style
       t.integer :price
       t.text :description
       t.boolean :new
